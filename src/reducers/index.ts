@@ -1,13 +1,13 @@
 // reducers/index.ts
 import { combineReducers } from 'redux';
-import powerState, { PowerState } from './itemList';
+import itemState, { ItemState } from './addItem';
 
 export type Store = {
-    powerState: PowerState;
+    itemState: ItemState;
 };
 
 const reducers = combineReducers({
-    powerState,
+    itemState,
 });
 
 export default reducers;

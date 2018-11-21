@@ -5,13 +5,13 @@ import { ItemList } from '../components';
 import { changePowerState } from '../actions';
 import { Store } from '../reducers';
 
-const mapStateToProps = ({ powerState }: Store) => ({
-    ...powerState,
+const mapStateToProps = ({ itemState }: Store) => ({
+    items: itemState.items,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    changePowerStateAction() {
-        dispatch(changePowerState());
+    changePowerStateAction(index: number) {
+        return () => dispatch(changePowerState(index));
     },
 });
 
