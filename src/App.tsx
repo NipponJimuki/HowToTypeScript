@@ -1,14 +1,16 @@
+// App.tsx
 import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import redcuers from './reducers';
+import { ItemList } from './containers';
 
-const store = createStore(() => {});
+const store = createStore(redcuers);
 
-// DOM出力
 ReactDom.render(
     <Provider store={store}>
-        <div>Text</div>
+        <ItemList />
     </Provider>,
     document.getElementById('content'),
 );
