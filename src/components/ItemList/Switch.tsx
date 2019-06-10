@@ -5,6 +5,6 @@ type Props = {
     onClick: () => void;
 };
 
-const Switch: React.SFC<Props> = ({ onClick }) => <button onClick={onClick}>スイッチ</button>;
+const Switch: React.FC<Props> = ({ onClick }) => <button onClick={onClick}>スイッチ</button>;
 
 export default Switch;

@@ -9,9 +9,8 @@ type Props = {
 };
 
 class ItemList extends React.Component<Props> {
-    static defaultProps: Pick<Props, 'power' | 'changePowerStateAction'> = {
+    static defaultProps: Pick<Props, 'power'> = {
         power: false,
-        changePowerStateAction() {},
     };
     render() {
         const { power, changePowerStateAction } = this.props;

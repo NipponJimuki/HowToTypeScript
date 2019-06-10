@@ -5,9 +5,7 @@ import { ItemList } from '../components';
 import { changePowerState } from '../actions';
 import { Store } from '../reducers';
 
-const mapStateToProps = ({ powerState }: Store) => ({
-    ...powerState,
-});
+const mapStateToProps = ({ powerState }: Store) => ({ power: powerState });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     changePowerStateAction() {
