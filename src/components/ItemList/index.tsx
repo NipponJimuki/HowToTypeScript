@@ -3,10 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Switch from './Switch';
 import DisplayState from './DisplayState';
-import { ItemProps } from '../reducers/addItem';
+import { Item } from '../../reducers/addItem';
 
 type Props = {
-    items: ItemProps[];
+    items: Item[];
     changePowerStateAction: (index: number) => () => void;
 };
 
@@ -39,5 +39,7 @@ const Item = styled.div`
     font-size: 3rem;
     width: 30%;
 `;
+List.displayName = 'List';
+Item.displayName = 'Item';
 
 export default ItemList;

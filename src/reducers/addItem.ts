@@ -4,37 +4,28 @@ import { ADD_ITEM, UPDATE_ITEM } from '../actions/actionType';
 import { addItem, updateItem } from '../actions';
 
 type Action = ReturnType<typeof addItem | typeof updateItem>;
-export interface ItemProps {
+export interface Item {
     id: string;
     name: string;
     power: boolean;
 }
-export type ItemState = {
-    items: ItemProps[];
-};
-const initialState = {
-    items: [],
-};
+export type ItemState = Item[];
+
+const initialState: ItemState = [];
 
 const itemState: Reducer<ItemState, Action> = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ITEM:
-            return {
+            return [
                 ...state,
-                items: [
-                    ...state.items,
-                    {
-                        id: `item-index-of-${state.items.length}`,
-                        name: action.payload,
-                        power: false,
-                    },
-                ],
-            };
+                {
+                    id: `${Math.random()}`,
+                    name: action.payload,
+                    power: false,
+                },
+            ];
         case UPDATE_ITEM: {
-            return {
-                ...state,
-                items: action.payload,
-            };
+            return action.payload;
         }
         default: {
             const _: never = action;

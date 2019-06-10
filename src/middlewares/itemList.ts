@@ -11,7 +11,7 @@ const changePowerState = (store: MiddlewareAPI<Dispatch, Store>) => (next: Dispa
 ) => {
     switch (action.type) {
         case CHANGE_POWER_STATE: {
-            const { items } = store.getState().itemState;
+            const items = store.getState().itemState;
             const changedPowerItems = items.map((item, index) =>
                 index === action.payload ? { ...item, power: !item.power } : item,
             );

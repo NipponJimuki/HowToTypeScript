@@ -5,9 +5,7 @@ import { ItemList } from '../components';
 import { changePowerState } from '../actions';
 import { Store } from '../reducers';
 
-const mapStateToProps = ({ itemState }: Store) => ({
-    items: itemState.items,
-});
+const mapStateToProps = ({ itemState }: Store) => ({ items: itemState });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     changePowerStateAction(index: number) {
