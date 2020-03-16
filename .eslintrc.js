@@ -36,6 +36,14 @@ module.exports = {
             },
         },
     },
+    overrides: [
+        {
+            files: ['**/*.tsx'],
+            rules: {
+                'react/prop-types': 'off',
+            },
+        },
+    ],
     rules: {
         '@typescript-eslint/explicit-function-return-type': OFF,
         'no-plusplus': OFF,
